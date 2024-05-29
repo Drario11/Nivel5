@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização em Tempo Real de Dados de Temperatura e Umidade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="js/chart-device-data.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Sensor de Temperatura e Umidade</h1>
+            <p>Visualização em Tempo Real</p>
+            <div class="device-info">
+                <span id="deviceCount">0 dispositivos</span>
+                <select id="listOfDevices" class="select_box">
+                    <option value="device1">Dispositivo 1</option>
+                    <option value="device2">Dispositivo 2</option>
+                    <option value="device3">Dispositivo 3</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="chart-section">
+            <canvas id="iotChart"></canvas>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/server.js",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run-script",
+        "start"
+      ],
+      "env": {
+        "NODE_ENV": "local",
+        "IotHubConnectionString": "sua_cadeia_de_conexão_do_IoT_Hub",
+        "EventHubConsumerGroup": "seu_grupo_consumidor_do_Event_Hub"
+      },
+      "protocol": "inspector",
+      "console": "integratedTerminal"
+    }
+  ]
+}
