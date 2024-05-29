@@ -84,7 +84,8 @@ const BME280_OPTION = {
   i2cAddress: BME280.BME280_DEFAULT_I2C_ADDRESS()
 };
 
-const connectionString = 'Your Connection String Here';
+const connectionString = 'HostName=nome-do-seu-hub.azure-devices.net;DeviceId=dispositivo-001;SharedAccessKey=xxxxxxxxxxxxxx';
+
 const LEDPin = 4;
 
 var sendingMessage = false;
