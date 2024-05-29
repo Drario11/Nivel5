@@ -191,3 +191,38 @@ client.open(function (err) {
   client.on('message', receiveMessageCallback);
   setInterval(sendMessage, 2000);
 });
+
+# Visualização em Tempo Real de Dados de Temperatura e Umidade
+
+Este projeto consiste em um aplicativo web que permite visualizar em tempo real os dados de temperatura e umidade enviados por dispositivos IoT conectados a um Azure IoT Hub.
+
+## Configuração do Ambiente Local
+
+### Pré-requisitos
+
+- Node.js (versão 16 LTS ou superior)
+- npm (Node Package Manager)
+- CLI do Azure configurada e conectada à sua conta Azure
+
+### Instalação de Dependências
+
+Para instalar as dependências necessárias, execute o seguinte comando no diretório raiz do projeto:
+
+```bash
+npm install
+
+set IotHubConnectionString=YOUR_IOT_HUB_CONNECTION_STRING
+set EventHubConsumerGroup=YOUR_CONSUMER_GROUP_NAME
+
+npm start
+
+az iot hub consumer-group create --hub-name YOUR_IOT_HUB_NAME --name YOUR_CONSUMER_GROUP_NAME
+
+az iot hub show-connection-string --hub-name YOUR_IOT_HUB_NAME --policy-name service
+
+az webapp create -n YOUR_WEB_APP_NAME -g YOUR_RESOURCE_GROUP_NAME -p YOUR_APP_SERVICE_PLAN_NAME --runtime "NODE:16LTS" --deployment-local-git
+
+az webapp config appsettings set -n YOUR_WEB_APP_NAME -g YOUR_RESOURCE_GROUP_NAME --settings EventHubConsumerGroup=YOUR_CONSUMER_GROUP_NAME IotHubConnectionString="YOUR_IOT_HUB_CONNECTION_STRING"
+
+az webapp show -n YOUR_WEB_APP_NAME -g YOUR_RESOURCE_GROUP_NAME --query state
+
