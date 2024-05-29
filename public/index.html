@@ -17,9 +17,7 @@
             <div class="device-info">
                 <span id="deviceCount">0 dispositivos</span>
                 <select id="listOfDevices" class="select_box">
-                    <option value="device1">Dispositivo 1</option>
-                    <option value="device2">Dispositivo 2</option>
-                    <option value="device3">Dispositivo 3</option>
+                    <!-- Aqui os dispositivos serão populados dinamicamente -->
                 </select>
             </div>
         </div>
@@ -29,5 +27,24 @@
             <canvas id="iotChart"></canvas>
         </section>
     </main>
+
+    <script>
+        // Lógica para atualizar dinamicamente os dispositivos no menu suspenso
+        $(document).ready(function() {
+            // Simulação de dispositivos - substituir com lógica real de preenchimento
+            var devices = ["Dispositivo 1", "Dispositivo 2", "Dispositivo 3"];
+
+            // Limpar opções atuais
+            $('#listOfDevices').empty();
+
+            // Adicionar novas opções baseadas nos dispositivos
+            devices.forEach(function(device) {
+                $('#listOfDevices').append('<option value="' + device + '">' + device + '</option>');
+            });
+
+            // Atualizar o contador de dispositivos
+            $('#deviceCount').text(devices.length + ' dispositivos');
+        });
+    </script>
 </body>
 </html>
